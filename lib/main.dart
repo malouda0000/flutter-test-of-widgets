@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/drawer.dart';
+import 'package:flutter_app/files/drawer.dart';
+import 'package:flutter_app/screens/deatils_tab.dart';
 import 'package:flutter_app/screens/main_Screen.dart';
+import 'package:flutter_app/screens/screen2.dart';
+import 'package:flutter_app/screens/screen3_testing_padding.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,20 +22,30 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _currentIndex = 0;
+  final tabs = [
+    // MainScreen,
+    // BulidingSecondScreen,
+    // TestOfPadding,
+    // DeatilsListItems
+    Center(child: Text('home')),
+    Center(child: Text('setting')),
+    Center(child: Text('help')),
+    Center(child: Text('personal')),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('appBar title'),
         actions: [
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            tooltip: 'Open shopping cart',
-            onPressed: () {
-              // handle the press
-            },
-          ),
           IconButton(
             icon: Icon(Icons.shopping_cart),
             tooltip: 'Open shopping cart',
@@ -49,6 +62,21 @@ class MyHomePage extends StatelessWidget {
         onPressed: () {},
         backgroundColor: Colors.blue,
         tooltip: "add more items bro!!",
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+          BottomNavigationBarItem(icon: Icon(Icons.help), label: 'help'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'settings')
+        ],
       ),
     );
   }
