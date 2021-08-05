@@ -6,7 +6,7 @@ class BulidingSecondScreen extends StatelessWidget {
     return Container(
       // height: 150,
       // width: 150,
-      color: Colors.lightGreen,
+      color: Colors.green,
       child: Center(child: BuildPost()),
     );
   }
