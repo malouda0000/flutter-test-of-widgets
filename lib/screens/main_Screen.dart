@@ -35,6 +35,7 @@ class ImagePade extends StatelessWidget {
           image: AssetImage('assets/images/image1.png'),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
               icon: Icon(Icons.favorite_outline_rounded),
