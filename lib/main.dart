@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/files/drawer.dart';
 import 'package:flutter_app/screens/deatils_tab.dart';
 import 'package:flutter_app/screens/main_Screen.dart';
+import 'package:flutter_app/screens/place_description.dart';
 import 'package:flutter_app/screens/screen2.dart';
 import 'package:flutter_app/screens/screen3_testing_padding.dart';
 
@@ -34,17 +35,14 @@ class _MyHomePageState extends State<MyHomePage> {
     BulidingSecondScreen(),
     TestOfPadding(),
     DeatilsListItems(),
-    // Center(child: Text('home')),
-    // Center(child: Text('setting')),
-    // Center(child: Text('help')),
-    // Center(child: Text('personal')),
+    PlaceDescription(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('appBar title'),
+        title: Text('Personal App'),
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart),
@@ -56,7 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       drawer: MyDrawer(),
-      body: tabs[_currentIndex],
+      body: SingleChildScrollView(
+        child: tabs[_currentIndex],
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {},
@@ -71,11 +71,15 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
         type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.redAccent,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
           BottomNavigationBarItem(icon: Icon(Icons.help), label: 'help'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'settings')
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: 'settings'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.details_outlined), label: 'details'),
         ],
       ),
     );

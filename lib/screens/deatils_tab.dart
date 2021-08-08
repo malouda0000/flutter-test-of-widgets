@@ -1,3 +1,6 @@
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class DeatilsListItems extends StatelessWidget {
@@ -6,48 +9,7 @@ class DeatilsListItems extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
-          DeatialsList(),
+          for (int i = 0; i <= 100; i++) DeatialsList(),
         ],
       ),
     );
@@ -65,9 +27,9 @@ class DeatialsList extends StatelessWidget {
       child: Container(
         child: Padding(
           padding: EdgeInsets.only(
-            left: 15,
-            right: 15,
-          ),
+              // left: 15,
+              // right: 15,
+              ),
           child: Row(
             children: [
               Expanded(
@@ -77,6 +39,8 @@ class DeatialsList extends StatelessWidget {
                   children: [
                     Text(
                       theHeader.toString(),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       discreptionOfTheHeader.toString(),
@@ -86,7 +50,13 @@ class DeatialsList extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [Icon(Icons.star), Text('78')],
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Colors.red,
+                  ),
+                  Text("23"),
+                ],
               ),
             ],
           ),

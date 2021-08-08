@@ -11,7 +11,7 @@ class MyDrawer extends StatelessWidget {
         child: Column(children: [
           Icon(
             ico,
-            size: 30,
+            // semanticLabel: 'adsfh;kj',
           ),
           Text(text),
         ]),
@@ -41,29 +41,27 @@ class MyDrawer extends StatelessWidget {
     // );
 
     return Drawer(
-      child: Container(
+      child: Expanded(
         child: ListView(
           children: [
-            Container(
-              child: UserAccountsDrawerHeader(
-                accountName: Text(_userName.toString().toUpperCase()),
-                accountEmail: Text(_userEmail.toUpperCase().toString()),
-                currentAccountPicture: CircleAvatar(
+            UserAccountsDrawerHeader(
+              accountName: Text(_userName.toString().toUpperCase()),
+              accountEmail: Text(_userEmail.toUpperCase().toString()),
+              currentAccountPicture: CircleAvatar(
+                child: Image(
+                  image: AssetImage("assets/images/userAccounImage.jpg"),
+                ),
+              ),
+              otherAccountsPictures: [
+                Image(
+                  image: AssetImage("assets/images/userAccounImage.jpg"),
+                ),
+                CircleAvatar(
                   child: Image(
                     image: AssetImage("assets/images/userAccounImage.jpg"),
                   ),
-                ),
-                otherAccountsPictures: [
-                  Image(
-                    image: AssetImage("assets/images/userAccounImage.jpg"),
-                  ),
-                  CircleAvatar(
-                    child: Image(
-                      image: AssetImage("assets/images/userAccounImage.jpg"),
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
             ListTile(
               title: Text('home'),
@@ -77,20 +75,33 @@ class MyDrawer extends StatelessWidget {
             ListTile(
               title: Text('sochial '),
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              drawerActions(
-                Icons.share_outlined,
-                "share",
+            Expanded(
+              child: Container(
+                color: Colors.red,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          drawerActions(
+                            Icons.share_outlined,
+                            "share",
+                          ),
+                          drawerActions(
+                            Icons.message_outlined,
+                            "feedback",
+                          ),
+                          drawerActions(
+                            Icons.settings_phone_outlined,
+                            "settings ",
+                          ),
+                        ]),
+                  ],
+                ),
               ),
-              drawerActions(
-                Icons.message_outlined,
-                "feedback",
-              ),
-              drawerActions(
-                Icons.settings_phone_outlined,
-                "settings ",
-              ),
-            ]),
+            ),
           ],
         ),
       ),
