@@ -3,51 +3,53 @@ import 'package:flutter/material.dart';
 class DeatilsListItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-        DeatialsList(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+          DeatialsList(),
+        ],
+      ),
     );
   }
 }
@@ -61,25 +63,33 @@ class DeatialsList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        child: Row(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  theHeader.toString(),
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 15,
+            right: 15,
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      theHeader.toString(),
+                    ),
+                    Text(
+                      discreptionOfTheHeader.toString(),
+                    ),
+                  ],
                 ),
-                Text(
-                  discreptionOfTheHeader.toString(),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [Icon(Icons.star), Text('78')],
-            ),
-          ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [Icon(Icons.star), Text('78')],
+              ),
+            ],
+          ),
         ),
       ),
     );

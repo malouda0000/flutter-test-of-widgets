@@ -30,14 +30,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final tabs = [
-    // MainScreen,
-    // BulidingSecondScreen,
-    // TestOfPadding,
-    // DeatilsListItems
-    Center(child: Text('home')),
-    Center(child: Text('setting')),
-    Center(child: Text('help')),
-    Center(child: Text('personal')),
+    MainScreen(),
+    BulidingSecondScreen(),
+    TestOfPadding(),
+    DeatilsListItems(),
+    // Center(child: Text('home')),
+    // Center(child: Text('setting')),
+    // Center(child: Text('help')),
+    // Center(child: Text('personal')),
   ];
 
   @override
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       drawer: MyDrawer(),
-      body: MainScreen(),
+      body: tabs[_currentIndex],
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {},

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
-  var _userName = "hummam";
-  var _userEmail = "hamam.hamza85@gmail.com";
+  final _userName = "hummam";
+  final _userEmail = "hamam.hamza85@gmail.com";
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -18,7 +18,16 @@ class MyDrawer extends StatelessWidget {
                     image: AssetImage("assets/images/userAccounImage.jpg"),
                   ),
                 ),
-                otherAccountsPictures: [],
+                otherAccountsPictures: [
+                  Image(
+                    image: AssetImage("assets/images/userAccounImage.jpg"),
+                  ),
+                  CircleAvatar(
+                    child: Image(
+                      image: AssetImage("assets/images/userAccounImage.jpg"),
+                    ),
+                  )
+                ],
               ),
             ),
             ListTile(
@@ -32,6 +41,32 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               title: Text('sochial '),
+            ),
+            Expanded(
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      // color: Colors.red,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.ac_unit_outlined,
+                        ),
+                        onPressed: () => {},
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.insert_comment_outlined),
+                      onPressed: () => {},
+                    ),
+                    IconButton(
+                        icon: Icon(Icons.description_outlined),
+                        onPressed: () => {}),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
